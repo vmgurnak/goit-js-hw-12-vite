@@ -33,7 +33,7 @@ const elements = {
 // Variables
 let wordSearch = '';
 let currentPage = 1;
-let perPage = 3;
+let perPage = 40;
 let totalImg = 1;
 let totalPages = 1;
 
