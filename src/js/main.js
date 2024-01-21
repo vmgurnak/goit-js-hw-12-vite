@@ -1,6 +1,9 @@
 // Default export
-import axiosSearch from './request-api';
-import createMarkup from './markup';
+// import axiosSearch from './request-api';
+// import createMarkup from './markup';
+
+// axios library
+import axios from 'axios';
 
 // iziToast library
 import iziToast from 'izitoast';
@@ -152,4 +155,61 @@ function moreBtnSow() {
 }
 function moreBtnHidden() {
   elements.moreBtn.classList.replace('show', 'hidden');
+}
+
+// request function
+async function axiosSearch(word, currentPage, perPage) {
+  const BASE_URL = 'https://pixabay.com/api/';
+  const API_KEY = '40988113-0969bce247b2af623dbb12295';
+
+  const config = {
+    params: {
+      key: API_KEY,
+      q: word,
+      image_type: 'photo',
+      orientation: 'horizontal',
+      safesearch: 'true',
+      page: currentPage,
+      per_page: perPage,
+    },
+  };
+
+  const axiosResp = await axios.get(`${BASE_URL}`, config);
+  return axiosResp;
+}
+
+// markup function
+function createMarkup(arr) {
+  return arr
+    .map(
+      ({
+        webformatURL,
+        largeImageURL,
+        tags,
+        likes,
+        views,
+        comments,
+        downloads,
+      }) => `<li class="js-gallery-item gallery-item"><a class="gallery-link" href="${largeImageURL}"><img class="gallery-img" src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
+    <div class="gallery-wrapper">
+      <div class="gallery-descr">
+        <p class="gallery-subtitle">Likes</p>
+        <p class="gallery-text">${likes}</p>
+      </div>
+      <div class="gallery-descr">
+        <p class="gallery-subtitle">Views</p>
+        <p class="gallery-text">${views}</p>
+      </div>
+      <div class="gallery-descr">
+        <p class="gallery-subtitle">Comments</p>
+        <p class="gallery-text">${comments}</p>
+      </div>
+      <div class="gallery-descr">
+        <p class="gallery-subtitle">Downloads</p>
+        <p class="gallery-text">${downloads}</p>
+      </div>
+    </div>
+  </li>`
+    )
+    .join('');
 }
