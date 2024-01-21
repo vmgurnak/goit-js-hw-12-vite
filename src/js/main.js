@@ -1,7 +1,3 @@
-// Default export
-// import axiosSearch from './request-api';
-// import createMarkup from './markup';
-
 // axios library
 import axios from 'axios';
 
@@ -104,7 +100,6 @@ async function handlerMoreBtn() {
     });
     return;
   }
-
   moreBtnHidden();
   loaderSow();
 
