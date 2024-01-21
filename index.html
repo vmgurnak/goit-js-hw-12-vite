@@ -1,85 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/goit-js-hw-12-vite/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    
-    <script type="module" crossorigin src="/goit-js-hw-12-vite/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/goit-js-hw-12-vite/assets/index-10c40100.css">
-  </head>
-  <body>
-    <header class="header">
-  <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
-        <a href="./page-2.html" class="nav-link">Page 2</a>
-      </li>
+<html lang="ru">
 
-      <li class="nav-item">
-        <a href="./page-3.html" class="nav-link">Page 3</a>
-      </li>
-    </ul>
-  </nav>
-</header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Search</title>
 
+  <!-- Fonts styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <section>
-      <h1>Lorem ipsum dolor sit amet.</h1>
-      <!-- Path to images as from index.html file -->
-      <img src="/goit-js-hw-12-vite/assets/javascript-8dac5379.svg" alt="" />
-    </section>
+  <!-- Modern-normalize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <!-- Loads the specified .html file -->
-    <section class="vite-promo">
-  <div class="container">
-    <div class="wrapper">
-      <h2 class="title">
-        <span class="gradient">Vite</span>
-      </h2>
-      <p class="text">Next Generation Frontend Tooling</p>
-      <p class="tagline">
-        Get ready for a development environment that can finally catch up with
-        you.
-      </p>
+  <!-- Custom styles -->
+  
 
-      <ul class="actions">
-        <li class="action">
-          <a
-            class="link"
-            href="https://vitejs.dev/guide/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Get Started</a
-          >
-        </li>
-        <li class="action">
-          <a
-            class="link"
-            href="https://github.com/vitejs/vite"
-            target="_blank"
-            rel="noopener noreferrer"
-            >View on GitHub</a
-          >
-        </li>
-      </ul>
+  <script type="module" crossorigin src="/goit-js-hw-12-vite/commonHelpers.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-12-vite/assets/vendor-bad0427b.js">
+  <link rel="stylesheet" href="/goit-js-hw-12-vite/assets/vendor-eb6030bc.css">
+  <link rel="stylesheet" href="/goit-js-hw-12-vite/assets/index-0f01580c.css">
+</head>
+
+<body>
+
+  <!-- SECTION FORM -->
+
+  <section class="form section">
+    <div class="form-container container">
+      <form action="submit" class="js-sumbit form-search" id="search-form">
+        <input class="form-input" type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
+        <button class="btn">Search</button>
+      </form>
     </div>
+  </section>
 
-    <div class="thumb">
-      <!-- Path to images as from index.html file -->
-      <img
-        class="pic"
-        src="/goit-js-hw-12-vite/assets/vite-logo-51249ca9.png"
-        alt="Vite logo"
-        width="640"
-        height="640"
-      />
+
+  <!-- SECTION GALLERY -->
+
+  <section class="gallery section">
+    <div class="gallery-container container">
+      <ul class="js-gallery gallery-list">
+      </ul>
+
+      <button class="js-btn gallery-btn btn hidden ">Load more</button>
+
+      <!-- loading indicator -->
+      <p class="js-loader loader hidden">Loading images, please wait...</p>
+    </div>
+  </section>
+
+  <!-- CSS-LOADER -->
+
+  <div class="js-loader-wrap loader-wrap hidden">
+    <div class="loader-content">
+      <div class="css-loader"></div>
+      <p class="loader-text">Loading data, please wait....</p>
     </div>
   </div>
-</section>
+
+  <!-- Markup Templates-->
+
+  <!-- <li class="gallery-item">
+    <a class="gallery-link" href="">
+      <img class="gallery-img" src="" alt="" loading="lazy" />
+    </a>
+    <div class="gallery-wrapper">
+      <div class="gallery-descr">
+        <p class="gallery-subtitle">Likes</p>
+        <p class="gallery-text">Likes</p>
+      </div>
+      <div class="gallery-descr">
+        <p class="gallery-subtitle">Views</p>
+        <p class="gallery-text">Views</p>
+      </div>
+      <div class="gallery-descr">
+        <p class="gallery-subtitle">Comments</p>
+        <p class="gallery-text">Comments</p>
+      </div>
+      <div class="gallery-descr">
+        <p class="gallery-subtitle">Downloads</p>
+        <p class="gallery-text">Downloads</p>
+      </div>
+    </div>
+  </li> -->
+
+</body>
 
 
-    
-  </body>
+
 </html>
