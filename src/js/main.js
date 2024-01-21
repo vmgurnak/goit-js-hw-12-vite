@@ -68,16 +68,14 @@ async function handlerSubmitForm(evt) {
               'Sorry, there are no images matching your search query. Please try again.',
           });
           moreBtnHidden();
-          loaderHidden();
           currentPage = 1;
         } else {
           elements.gallery.innerHTML = createMarkup(hits);
 
-          loaderHidden();
           moreBtnSow();
-
-          lightbox.refresh();
         }
+        lightbox.refresh();
+        loaderHidden();
       }
     );
   } catch (error) {
